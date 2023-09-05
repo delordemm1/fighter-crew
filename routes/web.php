@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,4 +18,16 @@ Route::get('/', function () {
         'laravel' => app()->version(),
         'php' => phpversion(),
     ]);
+});
+
+Route::get('/admin/login', function () {
+    return inertia('admin_login');
+});
+
+Route::get('/register', function () {
+    return inertia('landing');
+});
+
+Route::get('/admin/dashboard', function () {
+    return inertia('admin_dashboard');
 });
