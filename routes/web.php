@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/admin/login', function () {
-    return inertia('admin_login');
+    return inertia('admin/login');
 });
 
 Route::get('/register', function () {
@@ -29,5 +29,5 @@ Route::get('/register', function () {
 });
 
 Route::get('/admin/dashboard', function () {
-    return inertia('admin_dashboard');
+    return inertia('admin/dashboard');
 });
