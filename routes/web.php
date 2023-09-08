@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserRegFormController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,16 +19,14 @@ Route::get('/', function () {
         'laravel' => app()->version(),
         'php' => phpversion(),
     ]);
-});
+})->name('welcome');
 
-Route::get('/admin/login', function () {
-    return inertia('admin/login');
-});
+Route::get('/admin/login', [AdminController::class, 'showLoginForm'])->name('showlogin');
+Route::post('/admin/k/login', [AdminController::class, 'login'])->name('login');
 
-Route::get('/register', function () {
-    return inertia('landing');
-});
 
-Route::get('/admin/dashboard', function () {
-    return inertia('admin/dashboard');
-});
+// Route::get('/register', [UserRegFormController::class, 'register'])->name('register');
+Route::post('/register', [UserRegFormController::class, 'store'])->name('users.store');
+
+
+Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');

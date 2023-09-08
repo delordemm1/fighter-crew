@@ -6,7 +6,7 @@
 		const formData = new FormData(event.target as HTMLFormElement);
 
 		try {
-			const response = await fetch("/api/admin/authenticate", {
+			const response = await fetch("/web/admin/k/login", {
 				method: "POST",
 				body: formData
 			});

@@ -1,33 +1,17 @@
-<script lang="ts">
-async function submitForm(event: SubmitEvent) {
-    event.preventDefault();
+<script>
+  import { router } from '@inertiajs/svelte';
 
-    const formData = new FormData(event.target as HTMLFormElement);
-
-    try {
-    const response = await fetch('/api/store', {
-        method: 'POST',
-        body: formData,
-    });
-
-    if (response.ok) {
-        const data = await response.json();
-        console.log(data);
-    } else {
-        console.error(`HTTP Error: ${response.status}`);
-        const errorMessage = await response.text();
-        console.error(errorMessage);
-    }
-} catch (error) {
-    console.error('Network Error:', error);
+let values = {
+  name: null,
+  age: null,
+  email: null,
 }
 
+function handleSubmit() {
+  router.post('/users', values)
 }
 
-
-
-let title: string = "Reg Form";
-let csrf: string = "csrf_token()";
+let title="reg";
 </script>
 
 <svelte:head>
@@ -45,26 +29,17 @@ let csrf: string = "csrf_token()";
 				</h1>
 			</div>
                     <div class="grid grid-cols-1 content-center gap-4 sm:grid-cols-1">
-                        <form on:submit={submitForm}>
-                            <input type="hidden" name="_token" bind:value="{csrf}">
-                            <div class="mb-4">
-                                <label for="name" class="block text-white text-sm font-medium mb-2">Name</label>
-                                <input type="name" id="name" name="name" class="rounded-lg p-2 bg-gray-800 text-white" required />
-                              </div>
-                            
-                            <div class="mb-4">
-                          <label for="email" class="block text-white text-sm font-medium mb-2">Email</label>
-                          <input type="email" id="email" name="email" class="rounded-lg p-2 bg-gray-800 text-white" required />
-                        </div>
-                        <div class="mb-4">
-                          <label for="age" class="block text-white text-sm font-medium mb-2">Age</label>
-                          <input type="age" name="age" id="age" class="rounded-lg p-2 bg-gray-800 text-white" required />
-                        </div>
-                        <div class="text-center">
-                          <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full">
-                            Register
-                          </button>
-                        </div>
+                      <form on:submit|preventDefault={handleSubmit}>
+                        <label for="name">First name:</label>
+                        <input id="name" bind:value={values.name}>
+                      
+                        <label for="age">Last name:</label>
+                        <input id="age" bind:value={values.age}>
+                      
+                        <label for="email">Email:</label>
+                        <input id="email" bind:value={values.email}>
+                      
+                        <button type="submit">Submit</button>
                       </form>
                     </div>
                   </div>

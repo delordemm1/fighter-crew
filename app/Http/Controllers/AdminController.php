@@ -5,10 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\UserRegForm;
+use Inertia\Inertia;
+
 
 class AdminController extends Controller
 {
-    public function authenticate(Request $request)
+    public function showLoginForm () 
+    {
+        return Inertia::render('admin/login');
+    }
+
+    public function login(Request $request)
     {
         $email = $request->input('email');
         $password = $request->input('password');
@@ -28,9 +36,14 @@ class AdminController extends Controller
         return response()->json(['message' => 'wrong details']);
     }
     }
-    // public function admindashboard() {
-    //     return view('admin_dashboard');
-    // } 
+   
+    public function AdminDashboard(UserRegForm $user)
+    {
+        return Inertia::render('admin/dashboard', [
+          'users' => $user
+        ]);
+    }
+
     public function logout(Request $request) {
         Auth::logout();
 

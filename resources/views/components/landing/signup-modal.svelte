@@ -1,6 +1,21 @@
-<script lang="ts">
+<script>
 	import { Button, Checkbox, Input, Label } from "flowbite-svelte";
 	import Modal, { getModal } from "../modal.svelte";
+
+	import { router } from '@inertiajs/svelte';
+
+let values = {
+	firstName: "",
+	lastName: null,
+    age: null,
+    email: null,
+}
+
+function handleSubmit() {
+  router.post('/register', values)
+}
+
+export let errors = {}
 </script>
 
 <Modal id="signup-modal" size="xl" class="w-full">
@@ -16,6 +31,8 @@
 			<h1 class="text-center text-gray-500 mt-2">
 				Sign up for classes so we have materials ready for you!
 			</h1>
+			<form on:submit|preventDefault={handleSubmit}>
+
 			<div class="space-y-4 mt-8 xl:mt-12">
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
 					<div class="flex flex-col gap-2">
@@ -23,20 +40,26 @@
 						<input
 							type="text"
 							name="firstName"
-							id=""
+							id="firstName"
+							bind:value={values.firstName}
 							placeholder="John"
 							class="border px-4 py-2 rounded-md drop-shadow-sm focus:outline-none focus:border-gray-400 focus:ring-0"
 						/>
+						{#if errors.first_name}<div>{errors.firstName}</div>{/if}
+
 					</div>
 					<div class="flex flex-col gap-2">
 						<label for="lastName" class="">Last name</label>
 						<input
 							type="text"
 							name="lastName"
-							id=""
+							id="lastName"
+							bind:value={values.lastName}
 							placeholder="Doe"
 							class="border px-4 py-2 rounded-md drop-shadow-sm focus:outline-none focus:border-gray-400 focus:ring-0"
 						/>
+						{#if errors.first_name}<div>{errors.lastName}</div>{/if}
+
 					</div>
 				</div>
 				<div class="space-y-4">
@@ -45,29 +68,37 @@
 						<input
 							type="number"
 							name="age"
-							id=""
+							id="age"
+							bind:value={values.age}
 							placeholder="13"
 							class="border px-4 py-2 rounded-md drop-shadow-sm focus:outline-none focus:border-gray-400 focus:ring-0"
 						/>
+						{#if errors.first_name}<div>{errors.age}</div>{/if}
 					</div>
 					<div class="flex flex-col gap-2">
 						<label for="email" class="">Email</label>
 						<input
 							type="email"
 							name="email"
-							id=""
+							id="email"
+							bind:value={values.email}
 							placeholder="john.doe@gmail.com"
 							class="border px-4 py-2 rounded-md drop-shadow-sm focus:outline-none focus:border-gray-400 focus:ring-0"
 						/>
+						{#if errors.first_name}<div>{errors.email}</div>{/if}
+
 					</div>
 				</div>
 			</div>
+
 			<input
 				type="submit"
 				value="Signup"
 				class="bg-[#285495] text-white text-xl px-4 py-3 rounded-lg shadow-xl shadow-gray-300 w-full mt-8"
 			/>
+</form>
 		</div>
+	
 		<div
 			class="max-md:hidden p-6 xl:p-20 border-l flex items-center justify-center"
 		>
