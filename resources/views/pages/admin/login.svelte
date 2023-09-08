@@ -1,36 +1,17 @@
 <!-- Login.svelte -->
-<script lang="ts">
-	async function handleSubmit(event: SubmitEvent) {
-		event.preventDefault();
+<script>
+import { router } from '@inertiajs/svelte';
 
-		const formData = new FormData(event.target as HTMLFormElement);
+export let errors = {}
 
-		try {
-			const response = await fetch("/web/admin/k/login", {
-				method: "POST",
-				body: formData
-			});
+let values = {
+  email: null,
+  password: null,
+}
 
-			if (response.ok) {
-				const data = await response.json();
-				console.log(data);
-
-				if (data.message === "success") {
-					// Redirect to the admin dashboard on success
-					window.location.href = "/admin/dashboard";
-				}
-			} else {
-				console.error(`HTTP Error: ${response.status}`);
-				const errorMessage = await response.text();
-				console.error(errorMessage);
-			}
-		} catch (error) {
-			console.error("Network Error:", error);
-		}
-	}
-
-	let title: string = "Admin Login";
-	let csrf: string = "csrf_token()";
+function handleSubmit() {
+  router.post('/admin/k/login', values)
+}
 </script>
 
 <div class="flex justify-center mt-10">
@@ -44,8 +25,7 @@
 			>
 				log in
 			</h1>
-			<form on:submit={handleSubmit}>
-				<input type="hidden" name="_token" bind:value={csrf} />
+			<form on:submit|preventDefault={handleSubmit}>
 				<div class="mt-8 space-y-6">
 					<div class="flex flex-col gap-2">
 						<label for="email" class="">Email</label>
@@ -54,8 +34,10 @@
 							id="email"
 							name="email"
 							placeholder="john.doe@gmail.com"
+							bind:value={values.email}
 							class="border px-4 py-2 rounded-md focus:outline-none focus:border-gray-400 focus:ring-0 drop-shadow-sm"
 						/>
+						{#if errors.email}<div>{errors.email}</div>{/if}
 					</div>
 					<div class="">
 						<div class="flex flex-col gap-2">
@@ -65,6 +47,7 @@
 								name="password"
 								id="password"
 								placeholder="......."
+								bind:value={values.password}
 								class="border px-4 py-2 rounded-md focus:outline-none focus:border-gray-400 focus:ring-0 drop-shadow-sm"
 							/>
 						</div>

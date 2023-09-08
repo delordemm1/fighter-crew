@@ -7,51 +7,42 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\UserRegForm;
 use Inertia\Inertia;
-
+use App\Http\Requests\Auth\LoginRequest;
 
 class AdminController extends Controller
 {
     public function showLoginForm () 
     {
+        if (Auth::check()) {
+            return redirect()->route('admin.dashboard');
+        }
         return Inertia::render('admin/login');
     }
 
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
-        $email = $request->input('email');
-        $password = $request->input('password');
-
-        $user = User::where('email', $email)->first();
-
-        if ($user) {
-            if (password_verify($password, $user->password)) {
-                Auth::login($user);
-
-                // return redirect('/admin/dashboard');
-                return response()->json(['message' => 'success']);
-        } else {
-            return response()->json(['message' => 'wrong details']);
-        }
-    } else {
-        return response()->json(['message' => 'wrong details']);
+        
+        $request -> authenticate();
+        $request -> session() -> regenerate();
+        return redirect ('/admin/dashboard');
     }
-    }
-   
-    public function AdminDashboard(UserRegForm $user)
+    public function admindashboard()
     {
+        $users = UserRegForm::all();
+    
         return Inertia::render('admin/dashboard', [
-          'users' => $user
+            'users' => $users
         ]);
     }
 
-    public function logout(Request $request) {
-        Auth::logout();
+    public function destroy(Request $request)
+    {
+        Auth::guard('web')->logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
 
-        return response()->json(['message' => 'success']);
-
+        return redirect('/admin/login');
     }
 }
