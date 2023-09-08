@@ -10,7 +10,7 @@ let values = {
 }
 
 function handleSubmit() {
-  router.post('/admin/k/login', values)
+  router.post('/admin/login', values)
 }
 </script>
 

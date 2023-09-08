@@ -53,6 +53,6 @@ class UserRegFormController extends Controller
             'email' => ['required', 'max:50', 'email'],
         ]));
 
-        return to_route('welcome');
+        return to_route('welcome')->with('message', 'Account Successfully Registered');
     }
 }

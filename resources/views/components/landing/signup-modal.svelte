@@ -1,6 +1,7 @@
 <script>
 	import { Button, Checkbox, Input, Label } from "flowbite-svelte";
 	import Modal, { getModal } from "../modal.svelte";
+	import {page} from '@inertiajs/svelte';
 
 	import { router } from '@inertiajs/svelte';
 
@@ -21,8 +22,11 @@ export let errors = {}
 <Modal id="signup-modal" size="xl" class="w-full">
 	<div
 		class="grid grid-cols-1 md:grid-cols-2"
-	>
+	>	
 		<div class="max-sm:px-2 px-6 py-10 xl:p-10 borderx">
+			{#if $page.props.flash.message}
+			<div class="m-2 mt-0 pt-0 alert">{$page.props.flash.message}</div>
+		  {/if}
 			<h1
 				class="text-2xl md:text-4xl xl:text-5xl font-medium text-center borderx text-[#1E1E52] uppercase"
 			>
@@ -102,6 +106,7 @@ export let errors = {}
 		<div
 			class="max-md:hidden p-6 xl:p-20 border-l flex items-center justify-center"
 		>
+		
 			<img src="/images/logo.jpg" alt="" class="Financial fighters crew" />
 		</div>
 	</div>

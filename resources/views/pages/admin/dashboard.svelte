@@ -1,6 +1,7 @@
-<script lang='ts'>
+<script lang="ts">
 	import { FooterLink } from "flowbite-svelte";
 	import Header from "../../components/admin/header.svelte";
+
 
 	interface User {
   		id: string;
@@ -10,7 +11,6 @@
 		age: string;
 	};
 	export let users: User[];
-	
 	
 	function handleClick() {
 	}
