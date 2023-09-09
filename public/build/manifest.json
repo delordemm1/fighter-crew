@@ -1,11 +1,21 @@
 {
+  "Indicator.css": {
+    "file": "assets/Indicator-1d121e74.css",
+    "src": "Indicator.css"
+  },
+  "_Indicator.svelte_svelte_type_style_lang-9dab6815.js": {
+    "css": [
+      "assets/Indicator-1d121e74.css"
+    ],
+    "file": "assets/Indicator.svelte_svelte_type_style_lang-9dab6815.js"
+  },
   "resources/scripts/main.css": {
-    "file": "assets/main-6ec0adbf.css",
+    "file": "assets/main-01ad4161.css",
     "src": "resources/scripts/main.css"
   },
   "resources/scripts/main.ts": {
     "css": [
-      "assets/main-6ec0adbf.css"
+      "assets/main-01ad4161.css"
     ],
     "dynamicImports": [
       "resources/views/pages/admin/dashboard.svelte",
@@ -16,20 +26,21 @@
       "resources/views/pages/landing.svelte",
       "resources/views/pages/welcome.svelte"
     ],
-    "file": "assets/main-37d9c842.js",
+    "file": "assets/main-4a2817af.js",
     "isEntry": true,
     "src": "resources/scripts/main.ts"
   },
   "resources/views/pages/admin/dashboard.svelte": {
-    "file": "assets/dashboard-28be3247.js",
+    "file": "assets/dashboard-7b53a675.js",
     "imports": [
-      "resources/scripts/main.ts"
+      "resources/scripts/main.ts",
+      "_Indicator.svelte_svelte_type_style_lang-9dab6815.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/views/pages/admin/dashboard.svelte"
   },
   "resources/views/pages/admin/login.svelte": {
-    "file": "assets/login-53285378.js",
+    "file": "assets/login-83bc7ff5.js",
     "imports": [
       "resources/scripts/main.ts"
     ],
@@ -37,7 +48,7 @@
     "src": "resources/views/pages/admin/login.svelte"
   },
   "resources/views/pages/admin_dashboard.svelte": {
-    "file": "assets/admin_dashboard-6c7dee16.js",
+    "file": "assets/admin_dashboard-c375b680.js",
     "imports": [
       "resources/scripts/main.ts"
     ],
@@ -45,7 +56,7 @@
     "src": "resources/views/pages/admin_dashboard.svelte"
   },
   "resources/views/pages/admin_login.svelte": {
-    "file": "assets/admin_login-5d2209ee.js",
+    "file": "assets/admin_login-980d7b2a.js",
     "imports": [
       "resources/scripts/main.ts"
     ],
@@ -53,7 +64,7 @@
     "src": "resources/views/pages/admin_login.svelte"
   },
   "resources/views/pages/error.svelte": {
-    "file": "assets/error-957f65dc.js",
+    "file": "assets/error-af5dadb4.js",
     "imports": [
       "resources/scripts/main.ts"
     ],
@@ -61,24 +72,18 @@
     "src": "resources/views/pages/error.svelte"
   },
   "resources/views/pages/landing.svelte": {
-    "file": "assets/landing-6c66e31b.js",
+    "file": "assets/landing-447dd81b.js",
     "imports": [
       "resources/scripts/main.ts"
     ],
     "isDynamicEntry": true,
     "src": "resources/views/pages/landing.svelte"
   },
-  "resources/views/pages/welcome.css": {
-    "file": "assets/welcome-1d121e74.css",
-    "src": "resources/views/pages/welcome.css"
-  },
   "resources/views/pages/welcome.svelte": {
-    "css": [
-      "assets/welcome-1d121e74.css"
-    ],
-    "file": "assets/welcome-602fc7e8.js",
+    "file": "assets/welcome-d686190b.js",
     "imports": [
-      "resources/scripts/main.ts"
+      "resources/scripts/main.ts",
+      "_Indicator.svelte_svelte_type_style_lang-9dab6815.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/views/pages/welcome.svelte"

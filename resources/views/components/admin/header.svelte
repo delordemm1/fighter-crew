@@ -1,20 +1,25 @@
-<header class="h-[60px] fixed top-0 left-0 right-0 z-10">
-	<div
-		class="px-8 py-2 xl:px-96 xl:py-10x bg-white shadow-md flex justify-between items-center"
-	>
-		<div class="w-[50px] lg:w-[100px]x h-[50px]x borderx">
+<script>
+		import { page } from "@inertiajs/svelte";
+
+</script>
+<header class="h-[60px]">
+	<div class="px-4 sm:px-8 py-3 xl:px-10  xl:py-10x bg-slate-200 flex justify-between items-center">
+		<div class="w-[50px] lg:w-[100px]x h-[50px]x borderx max-sm:hidden">
 			<a href="/index.html">
-				<img src="/images/logo.jpg" alt="Financial fighters crew" class="" />
+				<img src="/images/logo.jpg" alt="Financial fighters crew" class="rounded-full">
 			</a>
 		</div>
-		<div class="flex justify-center items-center gap-4">
-			<div
-				class="w-[50px] h-[50px] border-4 rounded-full bg-[url('../images/user-profile.webp')] bg-center bg-cover bg-no-repeat"
-			>
-				<!-- <img src="/images/user-profile.webp" alt="user profile picture" class="w-[50px] h-[50px] rounded-full"> -->
+
+		<div class="flex justify-center items-center gap-8 lg:gap-12">
+			<div class="space-x-4 flex items-center">
+				<i class="fa-solid fa-user text-2xl xl:text-3xl text-gray-700"></i>
+			  <span class="text-gray-600">{$page.props.auth.user.email}</span>
 			</div>
-			<div class="borderx flex justify-center items-center">
-				<i class="fa-solid fa-chevron-down text-gray-500" />
+			<div class="text-red-500 mt-10x">
+				<a href="/admin/logout">
+					<i class="fa-solid fa-arrow-right-from-bracket"></i>
+				<span class="ml-1">Log out</span>
+				</a>
 			</div>
 		</div>
 	</div>

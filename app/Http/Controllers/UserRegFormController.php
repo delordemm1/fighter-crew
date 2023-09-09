@@ -49,10 +49,10 @@ class UserRegFormController extends Controller
         UserRegForm::create($request->validate([
             'firstName' => ['required', 'max:50'],
             'lastName' => ['required', 'max:50'],
-            'age' => ['required', 'max:50'],
-            'email' => ['required', 'max:50', 'email'],
+            'age' => ['required', 'max:50','numeric'],
+            'email' => ['required', 'max:50', 'email', 'unique:user_reg_forms'],
         ]));
 
-        return to_route('welcome')->with('message', 'Account Successfully Registered');
+        return to_route('welcome')->with('message', 'You successfully signed up!');
     }
 }
