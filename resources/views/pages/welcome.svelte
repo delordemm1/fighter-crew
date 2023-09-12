@@ -76,6 +76,9 @@
 					>
 						Change your life
 					</h1>
+					<h5 class="text-black text-lg mt-5 md:w-3/5">
+						Our free workshop will teach kids and teens essential money skills including:
+					</h5>
 					<div class="mt-6 lg:mt-10 borderx">
 						<ul class="space-y-4">
 							<li>
@@ -159,7 +162,10 @@
 					>
 						Learn the game of money
 					</h1>
-					<div class="mt-6 lg:mt-10 borderx">
+					<h5 class="mt-3 text-gray-600 text-[20px] md:text-2xl">
+						At our free workshop kids will learn money skills and get:
+					</h5>
+					<div class="mt-4 lg:mt-6 borderx">
 						<ul class="space-y-4">
 							<li>
 								<div class="flex gap-2 items-center">
@@ -170,7 +176,7 @@
 									</div>
 									<div class="">
 										<span class="text-gray-600 text-[20px] md:text-2xl"
-											>Having the right mindest</span
+											>The right mindest</span
 										>
 									</div>
 								</div>
