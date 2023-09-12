@@ -183,7 +183,7 @@
 									</div>
 									<div class="">
 										<span class="text-gray-600 text-[20px] md:text-2xl"
-											>Accountability patners</span
+											>Accountability partners</span
 										>
 									</div>
 								</div>
