@@ -29,24 +29,24 @@
 					<h1
 						class="text-[#285495] text-3xl sm:text-4xl md:text-5xl xl:text-8xl mt-1 font-semibold"
 					>
-						Financial fighters crew
+						Financial Fighters Crew
 					</h1>
 					<h1 class="text-xl sm:text-2xl xl:text-3xl mt-2 md:mt-4">
 						Knocking out generational poverty one step at a time!
 					</h1>
 					<h1 class="mt-4 md:mt-6 sm:text-lg xl:text-xl">
-						Join us in this fun,interactive,money class for the youth
+						Join us in this fun, interactive, money class for kids
 					</h1>
 					<h1 class="mt-2 text-red-500 sm:text-lg xl:text-xl">
-						Starts september 13, 2023
+						Starts September 13, 2023
 					</h1>
 					<div class="mt-4">
 						<a href="#signup-modal" on:click|preventDefault={openSignupModal}>
-						<button
-							class="bg-[#407BFF] text-white py-2 max-sm:w-fullx px-10 rounded-lg text-lg"
-						>
-							Sign up for free
-						</button>
+							<button
+								class="bg-[#407BFF] text-white py-2 max-sm:w-fullx px-10 rounded-lg text-lg"
+							>
+								Sign up for free
+							</button>
 						</a>
 					</div>
 				</div>
@@ -234,7 +234,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="py-10 xl:py-20 2xl:py-32 px-6 bg-[#C2DCFC]x">
+		<!-- <section class="py-10 xl:py-20 2xl:py-32 px-6 bg-[#C2DCFC]x">
 			<div class="text-center">
 				<h1 class="text-blue-500 text-3xl sm:text-4xl xl:text-6xl font-medium">
 					We are offering you a hand -
@@ -255,7 +255,7 @@
 					</button></a
 				>
 			</div>
-		</section>
+		</section> -->
 		<section
 			class="py-10 px-6 md:px-8 xl:py-20x flex max-sm:flex-col-reverse justify-center max-sm:items-center gap-6x xl:gap-10"
 		>
@@ -268,15 +268,19 @@
 						class="mt-2 text-gray-100x text-lg sm:text-xl xl:text-2xl font-mediumx"
 					>
 						Reach out at
-						<span class="text-blue-400 mx-2">financialfighters@gmail.com</span>
-						or whatsapp<span class="text-blue-400 mx-2">576-475-756</span>
+						<a href="mailto:info@prosperwithregina.com">
+							<span class="text-blue-400 mx-2">
+								info@prosperwithregina.com
+							</span>
+						</a>
+						<!-- or whatsapp<span class="text-blue-400 mx-2">576-475-756</span> -->
 					</h1>
 					<h1 class="mt-2 text-gray-600 text-lg sm:text-xl">
 						We look forward to hearing from you!
 					</h1>
 				</div>
 				<div class="mt-6 max-sm:flex max-sm:justify-center">
-					<a href="mailto:financialfighters@gmail.com">
+					<a href="mailto:info@prosperwithregina.com">
 						<button
 							class="bg-[#407BFF] text-white py-2 max-sm:w-fullx px-10 rounded-lg text-lg"
 						>

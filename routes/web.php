@@ -14,16 +14,13 @@ use App\Http\Controllers\UserRegFormController;
 |
 */
 
+
 Route::get('/', function () {
-    return inertia('welcome', [
-        'laravel' => app()->version(),
-        'php' => phpversion(),
-    ]);
+    return inertia('welcome');
 })->name('welcome');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/dashboard', [AdminController::class, 'admindashboard'])->name('admin.dashboard');
-
 });
 
 Route::get('/admin/login', [AdminController::class, 'showLoginForm'])->name('login');
@@ -34,4 +31,6 @@ Route::get('/admin/logout', [AdminController::class, 'destroy'])->name('logout')
 
 Route::post('/register', [UserRegFormController::class, 'store'])->name('users.store');
 
-
+Route::any('/{any}', function () {
+    return redirect()->route('welcome');
+})->where('any', '.*');

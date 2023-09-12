@@ -8,7 +8,7 @@
 		class="px-8 py-2 xl:px-96 xl:py-10x bg-white shadow-sm flex justify-between items-center"
 	>
 		<div class="w-[50px] lg:w-[100px]x h-[50px]x borderx">
-			<a href="/index.html">
+			<a href="/">
 				<img src="/images/logo.jpg" alt="Financial fighters crew" class="" />
 			</a>
 		</div>
