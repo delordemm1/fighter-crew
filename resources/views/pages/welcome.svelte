@@ -5,18 +5,11 @@
 	import Footer from "../components/landing/footer.svelte";
 	import { getModal } from "../components/modal.svelte";
 	import SignupModal from "../components/landing/signup-modal.svelte";
-	let list: string = "LIST";
 
-	export let laravel: string = "";
-	export let php: string = "";
 	const openSignupModal = () => {
 		getModal("signup-modal").open();
 	};
 </script>
-
-<svelte:head>
-	<title>{list} - Laravel {laravel} | PHP {php}</title>
-</svelte:head>
 <div class="pt-20 xl:pt-36">
 	<Header />
 	<div class="">

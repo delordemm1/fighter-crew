@@ -9,7 +9,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     @inertiaHead
     @vite(['resources/scripts/main.ts'])
-    <title>Landing page</title>
+    <title>The Financial Fighters Crew</title>
     <style>
         li {
             border-radius: 4px;
